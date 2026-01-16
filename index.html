@@ -343,8 +343,110 @@
             margin-bottom: 10px;
         }
 
-        .info-box p {
-            color: #bfdbfe;
+        .ball.star {
+            background: #eab308;
+            color: #020617;
+            border: 2px solid #fef08a;
+        }
+
+        .super-system-card {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            border: 2px solid #a855f7;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.2);
+        }
+
+        .strategy-pool {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .strategy-pool-card {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid;
+        }
+
+        .mega-stat {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            border-radius: 15px;
+            margin: 25px 0;
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+        }
+
+        .mega-stat-value {
+            font-size: 3rem;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .mega-stat-label {
+            font-size: 1rem;
+            color: #e9d5ff;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #0f172a;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #7c3aed;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #1e293b;
+            color: #94a3b8;
+        }
+
+        .comparison-table tr:hover {
+            background: #1e293b;
+        }
+
+        .winner-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #10b981;
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .warning-box {
+            background: #7f1d1d;
+            border-left: 4px solid #dc2626;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box h4 {
+            color: #fca5a5;
+            margin-bottom: 10px;
+        }
+
+        .warning-box p {
+            color: #fecaca;
             line-height: 1.6;
         }
 
@@ -452,6 +554,7 @@
         <button onclick="document.getElementById('fileInput').click()">[ CARICA_ARCHIVIO ]</button>
         <button onclick="analyzeAllStrategies()" style="color: #f8fafc; border-color: #34d399;">[ ANALISI_COMPLETA ]</button>
         <button onclick="showSystemsGenerator()" style="color: #fbbf24; border-color: #fbbf24;">[ SISTEMI_RIDOTTI ]</button>
+        <button onclick="showSuperSystem()" style="color: #a855f7; border-color: #a855f7;">[ SUPER_SISTEMA ]</button>
         <button onclick="clearData()" style="color: #ef4444; border-color: #ef4444;">[ RESET ]</button>
     </div>
 
@@ -578,6 +681,102 @@
 
         <div id="systemResults"></div>
     </div>
+
+    <div id="superSystemPanel" class="results" style="display: none;">
+        <h2 style="color: #a855f7; margin-bottom: 20px; text-align: center; font-size: 2rem;">
+            ⚡ SUPER SISTEMA - COPERTURA MASSIMA
+        </h2>
+
+        <div style="background: linear-gradient(135deg, #581c87 0%, #7c3aed 100%); padding: 25px; border-radius: 15px; margin-bottom: 25px; border: 3px solid #a855f7; box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);">
+            <h3 style="color: #fff; margin-bottom: 20px; text-align: center; font-size: 1.4rem;">
+                🎯 IL SISTEMA PIÙ POTENTE
+            </h3>
+            <p style="color: #e9d5ff; line-height: 1.8; margin-bottom: 15px; font-size: 1.05rem;">
+                Il <strong>SUPER SISTEMA</strong> combina MULTIPLE strategie in un unico mega-sistema.
+                Invece di scegliere UNA strategia, le giochi TUTTE contemporaneamente con riduzione intelligente!
+            </p>
+            <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; border-left: 4px solid #10b981;">
+                <strong style="color: #10b981; font-size: 1.1rem;">✓ VANTAGGI:</strong><br>
+                <span style="color: #d1fae5; line-height: 2;">
+                • Copri TUTTE le filosofie (caldi, freddi, bilanciati, matematici)<br>
+                • Riduzione automatica delle combinazioni duplicate<br>
+                • Massimizza la diversificazione<br>
+                • Se una strategia "azzecca", sei coperto!
+                </span>
+            </div>
+        </div>
+
+        <div class="config-panel" style="border: 2px solid #a855f7;">
+            <h3 style="color: #a855f7; margin-bottom: 20px;">⚙️ Configurazione Super Sistema</h3>
+
+            <div class="slider-group">
+                <label>BUDGET TOTALE: <span id="superBudgetValue">50€</span></label>
+                <input type="range" id="superBudget" min="20" max="200" value="50" step="10">
+                <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 5px;">
+                    Il sistema ottimizzerà il numero di combinazioni in base al tuo budget
+                </div>
+            </div>
+
+            <div style="margin-top: 25px; background: #0f172a; padding: 20px; border-radius: 10px;">
+                <label style="color: #a855f7; display: block; margin-bottom: 15px; font-weight: bold;">
+                    🎨 STRATEGIE DA INCLUDERE (seleziona almeno 2):
+                </label>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px; transition: all 0.3s;">
+                        <input type="checkbox" id="includeCaldi" checked style="margin-right: 10px; width: 18px; height: 18px;">
+                        🔥 Numeri Caldi
+                    </label>
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px;">
+                        <input type="checkbox" id="includeFreddi" checked style="margin-right: 10px; width: 18px; height: 18px;">
+                        ❄️ Ritardatari
+                    </label>
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px;">
+                        <input type="checkbox" id="includeBalanced" checked style="margin-right: 10px; width: 18px; height: 18px;">
+                        ⚖️ Bilanciata
+                    </label>
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px;">
+                        <input type="checkbox" id="includeRecent" checked style="margin-right: 10px; width: 18px; height: 18px;">
+                        🎯 Focus Recenti
+                    </label>
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px;">
+                        <input type="checkbox" id="includeContrarian" style="margin-right: 10px; width: 18px; height: 18px;">
+                        🔄 Contrarian
+                    </label>
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px;">
+                        <input type="checkbox" id="includeMath" style="margin-right: 10px; width: 18px; height: 18px;">
+                        📐 Matematica
+                    </label>
+                </div>
+            </div>
+
+            <div style="margin-top: 25px;">
+                <label style="color: #a855f7; display: block; margin-bottom: 10px; font-weight: bold;">
+                    🎲 MODALITÀ SUPER SISTEMA:
+                </label>
+                <select id="superMode" style="width: 100%; padding: 12px; background: #020617; border: 2px solid #a855f7; color: #e9d5ff; border-radius: 8px; font-size: 1rem;">
+                    <option value="union">🌟 UNION (Unione) - Max copertura, nessun duplicato</option>
+                    <option value="intersection">🎯 INTERSECTION (Intersezione) - Solo numeri comuni</option>
+                    <option value="hybrid">⚡ HYBRID (Ibrido) - Mix intelligente</option>
+                    <option value="megasystem">🚀 MEGASYSTEM - Tutte le combinazioni</option>
+                </select>
+                <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 8px; line-height: 1.6;">
+                    <strong>Union:</strong> Prende i migliori numeri da ogni strategia (più diversificato)<br>
+                    <strong>Intersection:</strong> Solo numeri che appaiono in più strategie (più concentrato)<br>
+                    <strong>Hybrid:</strong> 50% union + 50% intersection (equilibrato)<br>
+                    <strong>Megasystem:</strong> Gioca tutte le sestine delle strategie selezionate
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 35px 0;">
+            <button onclick="generateSuperSystem()" style="padding: 20px 50px; font-size: 1.3rem; background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%); color: white; border: 3px solid #c084fc; border-radius: 15px; box-shadow: 0 0 20px rgba(168, 85, 247, 0.5); cursor: pointer; font-weight: bold; transition: all 0.3s;">
+                ⚡ GENERA SUPER SISTEMA ⚡
+            </button>
+        </div>
+
+        <div id="superSystemResults"></div>
+    </div>
 </div>
 
 <script>
@@ -651,6 +850,11 @@
     document.getElementById('delayWeight').addEventListener('input', function() {
         strategies.balanced.delayWeight = this.value / 100;
         document.getElementById('delayValue').textContent = this.value + '%';
+    });
+
+    document.getElementById('recentWeight').addEventListener('input', function() {
+        strategies.balanced.recentWeight = this.value / 100;
+        document.getElementById('recentValue').textContent = this.value + '%';
     });
 
     document.getElementById('systemNumbers').addEventListener('input', function() {
@@ -880,21 +1084,371 @@
     }
 
     function downloadSystem(combinations) {
-        let text = 'SISTEMA RIDOTTO SUPERENALOTTO\n';
-        text += '================================\n\n';
-        combinations.forEach((combo, idx) => {
-            text += `Sestina ${idx + 1}: ${combo.join(', ')}\n`;
-        });
-        text += '\n================================\n';
+        let text = `SISTEMA RIDOTTO SUPERENALOTTO\n`;
+        text += '='.repeat(50) + '\n\n';
+        text += `Data generazione: ${new Date().toLocaleString('it-IT')}\n`;
         text += `Totale combinazioni: ${combinations.length}\n`;
-        text += `Costo: ${combinations.length}€\n`;
+        text += `Costo totale: ${combinations.length}€\n`;
+        text += '\n' + '='.repeat(50) + '\n\n';
+
+        combinations.forEach((combo, idx) => {
+            text += `Sestina ${String(idx + 1).padStart(3, '0')}: ${combo.join(', ')}\n`;
+        });
+
+        text += '\n' + '='.repeat(50) + '\n';
+        text += 'BUONA FORTUNA! 🍀\n';
 
         const blob = new Blob([text], {type: 'text/plain'});
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'sistema_ridotto_superenalotto.txt';
+        a.download = `sistema_ridotto_${combinations.length}_sestine.txt`;
         a.click();
+    }
+
+    document.getElementById('superBudget').addEventListener('input', function() {
+        document.getElementById('superBudgetValue').textContent = this.value + '€';
+    });
+
+    function showSuperSystem() {
+        if (!analysisData) {
+            alert("Prima carica l'archivio e fai un'analisi!");
+            return;
+        }
+        document.getElementById('results').style.display = 'none';
+        document.getElementById('systemsPanel').style.display = 'none';
+        document.getElementById('superSystemPanel').style.display = 'block';
+        window.scrollTo({top: document.getElementById('superSystemPanel').offsetTop - 20, behavior: 'smooth'});
+    }
+
+    function generateSuperSystem() {
+        const budget = parseInt(document.getElementById('superBudget').value);
+        const mode = document.getElementById('superMode').value;
+
+        // Raccogli strategie selezionate
+        const selectedStrategies = [];
+        if (document.getElementById('includeCaldi').checked) selectedStrategies.push('hotNumbers');
+        if (document.getElementById('includeFreddi').checked) selectedStrategies.push('coldNumbers');
+        if (document.getElementById('includeBalanced').checked) selectedStrategies.push('balanced');
+        if (document.getElementById('includeRecent').checked) selectedStrategies.push('recentFocused');
+        if (document.getElementById('includeContrarian').checked) selectedStrategies.push('contrarian');
+        if (document.getElementById('includeMath').checked) selectedStrategies.push('mathematical');
+
+        if (selectedStrategies.length < 2) {
+            alert('Seleziona almeno 2 strategie per il Super Sistema!');
+            return;
+        }
+
+        // Genera pool di numeri per ogni strategia
+        const pools = {};
+        selectedStrategies.forEach(strat => {
+            const result = generateStrategyResults(analysisData.stats, strat);
+            pools[strat] = {
+                name: strategies[strat].name,
+                color: strategies[strat].color,
+                numbers: result.sestina,
+                stars: result.stars
+            };
+        });
+
+        let finalCombinations = [];
+        let poolDescription = '';
+
+        if (mode === 'union') {
+            // UNION: prendi tutti i numeri unici da tutte le strategie
+            const allNumbers = new Set();
+            Object.values(pools).forEach(pool => {
+                pool.numbers.forEach(n => allNumbers.add(n));
+            });
+            const uniqueNumbers = Array.from(allNumbers).sort((a, b) => a - b);
+
+            // Genera combinazioni fino al budget
+            const maxCombos = Math.floor(budget);
+            finalCombinations = generateSmartCombinations(uniqueNumbers, maxCombos);
+            poolDescription = `Pool di ${uniqueNumbers.length} numeri unici da tutte le strategie`;
+
+        } else if (mode === 'intersection') {
+            // INTERSECTION: solo numeri che appaiono in almeno 2 strategie
+            const numCount = {};
+            Object.values(pools).forEach(pool => {
+                pool.numbers.forEach(n => {
+                    numCount[n] = (numCount[n] || 0) + 1;
+                });
+            });
+            const commonNumbers = Object.keys(numCount)
+                .filter(n => numCount[n] >= 2)
+                .map(Number)
+                .sort((a, b) => a - b);
+
+            if (commonNumbers.length < 6) {
+                alert('Non ci sono abbastanza numeri comuni! Prova con Union o Hybrid.');
+                return;
+            }
+
+            const maxCombos = Math.floor(budget);
+            finalCombinations = generateSmartCombinations(commonNumbers, maxCombos);
+            poolDescription = `Pool di ${commonNumbers.length} numeri comuni (presenti in 2+ strategie)`;
+
+        } else if (mode === 'hybrid') {
+            // HYBRID: 50% union + 50% intersection
+            const allNumbers = new Set();
+            const numCount = {};
+
+            Object.values(pools).forEach(pool => {
+                pool.numbers.forEach(n => {
+                    allNumbers.add(n);
+                    numCount[n] = (numCount[n] || 0) + 1;
+                });
+            });
+
+            const commonNumbers = Object.keys(numCount)
+                .filter(n => numCount[n] >= 2)
+                .map(Number);
+
+            const uniqueNumbers = Array.from(allNumbers);
+            const otherNumbers = uniqueNumbers.filter(n => !commonNumbers.includes(n));
+
+            // Prendi 50% comuni + 50% altri
+            const targetSize = Math.min(15, Math.ceil(uniqueNumbers.length * 0.8));
+            const hybridPool = [
+                ...commonNumbers.slice(0, Math.ceil(targetSize / 2)),
+                ...otherNumbers.slice(0, Math.floor(targetSize / 2))
+            ].sort((a, b) => a - b);
+
+            const maxCombos = Math.floor(budget);
+            finalCombinations = generateSmartCombinations(hybridPool, maxCombos);
+            poolDescription = `Pool ibrido di ${hybridPool.length} numeri (50% comuni + 50% unici)`;
+
+        } else if (mode === 'megasystem') {
+            // MEGASYSTEM: tutte le sestine di tutte le strategie (rimozione duplicati)
+            const allCombos = new Set();
+            Object.values(pools).forEach(pool => {
+                const comboKey = pool.numbers.sort((a,b) => a-b).join(',');
+                allCombos.add(comboKey);
+            });
+
+            finalCombinations = Array.from(allCombos).map(combo =>
+                combo.split(',').map(Number)
+            );
+
+            // Se supera il budget, prendi le prime N
+            if (finalCombinations.length > budget) {
+                finalCombinations = finalCombinations.slice(0, budget);
+            }
+
+            poolDescription = `Tutte le sestine delle strategie selezionate (duplicati rimossi)`;
+        }
+
+        displaySuperSystem(pools, finalCombinations, budget, mode, poolDescription, selectedStrategies);
+    }
+
+    function generateSmartCombinations(pool, maxCount) {
+        if (pool.length < 6) return [];
+
+        const combinations = [];
+        const poolSize = pool.length;
+
+        if (poolSize === 6) {
+            return [pool];
+        }
+
+        if (poolSize <= 12) {
+            // Sistema ridotto per pool piccoli
+            const systemSize = Math.min(poolSize, 10);
+            const guarantee = poolSize >= 10 ? 4 : 3;
+
+            if (reducedSystems[systemSize] && reducedSystems[systemSize][guarantee]) {
+                const template = reducedSystems[systemSize][guarantee];
+                template.forEach(t => {
+                    combinations.push(t.map(idx => pool[idx - 1]));
+                });
+            }
+        }
+
+        // Se non abbiamo abbastanza combinazioni, genera casualmente
+        while (combinations.length < maxCount && combinations.length < 100) {
+            const combo = [];
+            const used = new Set();
+
+            while (combo.length < 6) {
+                const idx = Math.floor(Math.random() * pool.length);
+                const num = pool[idx];
+                if (!used.has(num)) {
+                    combo.push(num);
+                    used.add(num);
+                }
+            }
+
+            const comboKey = combo.sort((a,b) => a-b).join(',');
+            if (!combinations.some(c => c.join(',') === comboKey)) {
+                combinations.push(combo.sort((a,b) => a-b));
+            }
+        }
+
+        return combinations.slice(0, maxCount);
+    }
+
+    function displaySuperSystem(pools, combinations, budget, mode, description, strategies) {
+        const actualCost = combinations.length;
+        const savings = budget - actualCost;
+
+        let html = `
+            <div class="mega-stat">
+                <div class="mega-stat-value">${combinations.length}</div>
+                <div class="mega-stat-label">Sestine Generate</div>
+            </div>
+
+            <div class="super-system-card">
+                <h3 style="color: #a855f7; margin-bottom: 20px; text-align: center;">
+                    📊 ANALISI SUPER SISTEMA
+                </h3>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>Metrica</th>
+                        <th>Valore</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Modalità</strong></td>
+                        <td style="color: #a855f7;">${mode.toUpperCase()}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Strategie Combinate</strong></td>
+                        <td>${strategies.length}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Descrizione Pool</strong></td>
+                        <td>${description}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Budget Previsto</strong></td>
+                        <td>${budget}€</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Costo Effettivo</strong></td>
+                        <td style="color: #10b981; font-weight: bold;">${actualCost}€</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Risparmio</strong></td>
+                        <td style="color: ${savings > 0 ? '#10b981' : '#ef4444'};">${savings}€</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="strategy-pool">
+                ${Object.entries(pools).map(([key, pool]) => `
+                    <div class="strategy-pool-card" style="border-left-color: ${pool.color};">
+                        <h4 style="color: ${pool.color}; margin-bottom: 10px;">${pool.name}</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                            ${pool.numbers.map(n =>
+            `<span style="background: ${pool.color}; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold;">${n}</span>`
+        ).join('')}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+
+            <div class="info-box" style="background: #1e3a1c; border-left-color: #10b981;">
+                <h4 style="color: #10b981;">💡 Come Funziona Questo Super Sistema</h4>
+                <p>
+                    ${getModeExplanation(mode, strategies.length)}
+                </p>
+            </div>
+
+            ${actualCost > 50 ? `
+                <div class="warning-box">
+                    <h4>⚠️ ATTENZIONE - Sistema Costoso</h4>
+                    <p>
+                        Questo sistema costa <strong>${actualCost}€</strong>. Assicurati che sia compatibile con il tuo budget per il gioco responsabile.
+                        Ricorda: anche con tante combinazioni, la probabilità di vincita rimane molto bassa.
+                    </p>
+                </div>
+            ` : ''}
+
+            <h3 style="color: #a855f7; margin: 30px 0 20px 0; text-align: center;">
+                🎲 Le Tue ${combinations.length} Sestine Super Sistema
+            </h3>
+            <div style="max-height: 600px; overflow-y: auto; background: #0f172a; padding: 15px; border-radius: 10px; border: 2px solid #a855f7;">
+                ${combinations.map((combo, idx) => `
+                    <div class="combination-row">
+                        <span class="combination-label">Sestina ${idx + 1}:</span>
+                        ${combo.map(n => `<div class="ball" style="background: #a855f7;">${n}</div>`).join('')}
+                    </div>
+                `).join('')}
+            </div>
+
+            <div style="text-align: center; margin-top: 35px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <button onclick="printSystem()" style="padding: 15px 30px; background: #10b981; color: white; border-radius: 10px; border: 2px solid #059669;">
+                    🖨️ STAMPA SUPER SISTEMA
+                </button>
+                <button onclick="downloadSuperSystem(${JSON.stringify(combinations)}, '${mode}')" style="padding: 15px 30px; background: #3b82f6; color: white; border-radius: 10px; border: 2px solid #2563eb;">
+                    💾 SCARICA TXT
+                </button>
+                <button onclick="compareWithSingleSystems()" style="padding: 15px 30px; background: #f59e0b; color: white; border-radius: 10px; border: 2px solid #d97706;">
+                    📊 CONFRONTA
+                </button>
+                <button onclick="showSuperSystem()" style="padding: 15px 30px; background: #334155; color: #94a3b8; border-radius: 10px; border: 2px solid #475569;">
+                    🔄 NUOVO SUPER SISTEMA
+                </button>
+            </div>
+
+            <div class="info-box" style="margin-top: 30px;">
+                <h4>🎯 Prossimi Passi</h4>
+                <p>
+                    1. <strong>Scarica o stampa</strong> tutte le ${combinations.length} sestine<br>
+                    2. <strong>Gioca l'intero sistema</strong> alla prossima estrazione<br>
+                    3. <strong>Tieni traccia</strong> dei risultati per confronto<br>
+                    4. <strong>Divertiti!</strong> Ricorda che è un gioco, non un investimento
+                </p>
+            </div>
+        `;
+
+        document.getElementById('superSystemResults').innerHTML = html;
+    }
+
+    function getModeExplanation(mode, stratCount) {
+        const explanations = {
+            union: `Questo Super Sistema UNION combina <strong>${stratCount} diverse strategie</strong> prendendo i numeri migliori da ognuna.
+                   Risultato: massima diversificazione e copertura di tutte le filosofie di gioco.`,
+
+            intersection: `Questo Super Sistema INTERSECTION si concentra sui <strong>numeri comuni</strong> tra le ${stratCount} strategie.
+                          Solo i numeri che appaiono in almeno 2 strategie vengono inclusi. Risultato: concentrazione sui "favoriti condivisi".`,
+
+            hybrid: `Questo Super Sistema HYBRID è un <strong>mix perfetto</strong> tra Union e Intersection.
+                    Include sia i numeri comuni che alcuni numeri unici da ogni strategia. Risultato: equilibrio tra concentrazione e diversificazione.`,
+
+            megasystem: `Questo MEGASYSTEM gioca <strong>TUTTE le sestine</strong> generate dalle ${stratCount} strategie selezionate.
+                        I duplicati sono stati rimossi automaticamente. Risultato: copertura totale di tutte le combinazioni top.`
+        };
+
+        return explanations[mode] || 'Sistema ottimizzato per massima copertura.';
+    }
+
+    function downloadSuperSystem(combinations, mode) {
+        let text = `SUPER SISTEMA SUPERENALOTTO - Modalità ${mode.toUpperCase()}\n`;
+        text += '='.repeat(60) + '\n\n';
+        text += `Data generazione: ${new Date().toLocaleString('it-IT')}\n`;
+        text += `Totale combinazioni: ${combinations.length}\n`;
+        text += `Costo totale: ${combinations.length}€\n`;
+        text += '\n' + '='.repeat(60) + '\n\n';
+
+        combinations.forEach((combo, idx) => {
+            text += `Sestina ${String(idx + 1).padStart(3, '0')}: ${combo.join(', ')}\n`;
+        });
+
+        text += '\n' + '='.repeat(60) + '\n';
+        text += 'BUONA FORTUNA! 🍀\n';
+
+        const blob = new Blob([text], {type: 'text/plain'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `super_sistema_${mode}_${combinations.length}_sestine.txt`;
+        a.click();
+    }
+
+    function compareWithSingleSystems() {
+        alert('Funzione di confronto in sviluppo! Confronterà il Super Sistema con le singole strategie.');
     }
 
     function selectStrategy(strategy) {
