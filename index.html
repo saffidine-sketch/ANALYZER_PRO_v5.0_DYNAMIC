@@ -1346,6 +1346,41 @@
                     <option value="mixed">Mix Intelligente (consigliato)</option>
                 </select>
             </div>
+
+            <!-- OPZIONI AVANZATE -->
+            <div style="margin-top: 25px; padding: 20px; background: #0f172a; border-radius: 10px; border: 1px solid #334155;">
+                <h4 style="color: #38bdf8; margin-bottom: 15px; font-size: 0.95rem;">🔧 OPZIONI AVANZATE</h4>
+
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <!-- Filtri Qualita -->
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer;">
+                        <input type="checkbox" id="advancedFiltersCheck" onchange="toggleSumRange()" style="margin-right: 10px; width: 18px; height: 18px; accent-color: #10b981;">
+                        <span>🔍 Filtri qualita avanzati (somma, zone, pari/dispari)</span>
+                    </label>
+
+                    <!-- Range Somma (nascosto di default) -->
+                    <div id="sumRangeContainer" style="display: none; margin-left: 28px; padding: 15px; background: #1e293b; border-radius: 8px;">
+                        <label style="color: #94a3b8; display: block; margin-bottom: 10px; font-size: 0.85rem;">
+                            📊 Range somma sestina preferito:
+                        </label>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="color: #64748b;">Min:</span>
+                            <input type="number" id="targetSumMin" value="200" min="100" max="400" style="width: 70px; padding: 5px; background: #020617; border: 1px solid #334155; color: #10b981; border-radius: 4px; text-align: center;">
+                            <span style="color: #64748b;">Max:</span>
+                            <input type="number" id="targetSumMax" value="340" min="150" max="450" style="width: 70px; padding: 5px; background: #020617; border: 1px solid #334155; color: #10b981; border-radius: 4px; text-align: center;">
+                        </div>
+                        <p style="color: #64748b; font-size: 0.75rem; margin-top: 8px;">
+                            Consigliato: 200-340 (statisticamente ottimale)
+                        </p>
+                    </div>
+
+                    <!-- SuperStar -->
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer;">
+                        <input type="checkbox" id="includeSuperStarCheck" style="margin-right: 10px; width: 18px; height: 18px; accent-color: #a855f7;">
+                        <span>⭐ Includi SuperStar consigliati (top 3 per score)</span>
+                    </label>
+                </div>
+            </div>
         </div>
 
         <div style="text-align: center; margin: 30px 0;">
@@ -1442,6 +1477,41 @@
                     <strong>Megasystem:</strong> Gioca tutte le sestine delle strategie selezionate
                 </div>
             </div>
+
+            <!-- OPZIONI AVANZATE SUPER SISTEMA -->
+            <div style="margin-top: 25px; padding: 20px; background: #1e1b4b; border-radius: 10px; border: 1px solid #7c3aed;">
+                <h4 style="color: #c084fc; margin-bottom: 15px; font-size: 0.95rem;">🔧 OPZIONI AVANZATE</h4>
+
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <!-- Filtri Qualita -->
+                    <label style="display: flex; align-items: center; color: #e9d5ff; cursor: pointer;">
+                        <input type="checkbox" id="superAdvancedFiltersCheck" onchange="toggleSuperSumRange()" style="margin-right: 10px; width: 18px; height: 18px; accent-color: #a855f7;">
+                        <span>🔍 Filtri qualita avanzati (somma, zone, pari/dispari)</span>
+                    </label>
+
+                    <!-- Range Somma (nascosto di default) -->
+                    <div id="superSumRangeContainer" style="display: none; margin-left: 28px; padding: 15px; background: #312e81; border-radius: 8px;">
+                        <label style="color: #e9d5ff; display: block; margin-bottom: 10px; font-size: 0.85rem;">
+                            📊 Range somma sestina preferito:
+                        </label>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="color: #a5b4fc;">Min:</span>
+                            <input type="number" id="superTargetSumMin" value="200" min="100" max="400" style="width: 70px; padding: 5px; background: #020617; border: 1px solid #7c3aed; color: #a855f7; border-radius: 4px; text-align: center;">
+                            <span style="color: #a5b4fc;">Max:</span>
+                            <input type="number" id="superTargetSumMax" value="340" min="150" max="450" style="width: 70px; padding: 5px; background: #020617; border: 1px solid #7c3aed; color: #a855f7; border-radius: 4px; text-align: center;">
+                        </div>
+                        <p style="color: #a5b4fc; font-size: 0.75rem; margin-top: 8px;">
+                            Consigliato: 200-340 (statisticamente ottimale)
+                        </p>
+                    </div>
+
+                    <!-- SuperStar -->
+                    <label style="display: flex; align-items: center; color: #e9d5ff; cursor: pointer;">
+                        <input type="checkbox" id="superIncludeSuperStarCheck" style="margin-right: 10px; width: 18px; height: 18px; accent-color: #c084fc;">
+                        <span>⭐ Includi SuperStar consigliati (top 3 per score)</span>
+                    </label>
+                </div>
+            </div>
         </div>
 
         <div style="text-align: center; margin: 35px 0;">
@@ -1531,6 +1601,41 @@
                     <strong>Zone Uniformi:</strong> Garantisce presenza di numeri da ogni zona (1-15, 16-30, ecc.)
                 </div>
             </div>
+
+            <!-- OPZIONI AVANZATE MEGA SISTEMA -->
+            <div style="margin-top: 25px; padding: 20px; background: #431407; border-radius: 10px; border: 1px solid #ea580c;">
+                <h4 style="color: #fb923c; margin-bottom: 15px; font-size: 0.95rem;">🔧 OPZIONI AVANZATE</h4>
+
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <!-- Filtri Qualita -->
+                    <label style="display: flex; align-items: center; color: #fed7aa; cursor: pointer;">
+                        <input type="checkbox" id="megaAdvancedFiltersCheck" onchange="toggleMegaSumRange()" style="margin-right: 10px; width: 18px; height: 18px; accent-color: #f97316;">
+                        <span>🔍 Filtri qualita avanzati (somma, zone, pari/dispari)</span>
+                    </label>
+
+                    <!-- Range Somma (nascosto di default) -->
+                    <div id="megaSumRangeContainer" style="display: none; margin-left: 28px; padding: 15px; background: #7c2d12; border-radius: 8px;">
+                        <label style="color: #fed7aa; display: block; margin-bottom: 10px; font-size: 0.85rem;">
+                            📊 Range somma sestina preferito:
+                        </label>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="color: #fdba74;">Min:</span>
+                            <input type="number" id="megaTargetSumMin" value="200" min="100" max="400" style="width: 70px; padding: 5px; background: #020617; border: 1px solid #ea580c; color: #f97316; border-radius: 4px; text-align: center;">
+                            <span style="color: #fdba74;">Max:</span>
+                            <input type="number" id="megaTargetSumMax" value="340" min="150" max="450" style="width: 70px; padding: 5px; background: #020617; border: 1px solid #ea580c; color: #f97316; border-radius: 4px; text-align: center;">
+                        </div>
+                        <p style="color: #fdba74; font-size: 0.75rem; margin-top: 8px;">
+                            Consigliato: 200-340 (statisticamente ottimale)
+                        </p>
+                    </div>
+
+                    <!-- SuperStar -->
+                    <label style="display: flex; align-items: center; color: #fed7aa; cursor: pointer;">
+                        <input type="checkbox" id="megaIncludeSuperStarCheck" style="margin-right: 10px; width: 18px; height: 18px; accent-color: #fb923c;">
+                        <span>⭐ Includi SuperStar consigliati (top 3 per score)</span>
+                    </label>
+                </div>
+            </div>
         </div>
 
         <div style="text-align: center; margin: 35px 0;">
@@ -1551,6 +1656,7 @@
     let analysisData = null;
     let previousResults = null;
     let recentExtractions = [];
+    let rawExtractionsData = null; // Array di {numbers: [...], star: n} per analisi coppie
 
     const strategies = {
         'balanced': {
@@ -1691,13 +1797,37 @@
         const guarantee = parseInt(document.getElementById('systemGuarantee').value);
         const source = document.getElementById('systemSource').value;
 
+        // Leggi opzioni avanzate
+        const advancedFiltersEl = document.getElementById('advancedFiltersCheck');
+        const includeSuperStarEl = document.getElementById('includeSuperStarCheck');
+        const useAdvancedFilters = advancedFiltersEl && advancedFiltersEl.checked;
+        const includeSuperStar = includeSuperStarEl && includeSuperStarEl.checked;
+
+        // Range somma personalizzato
+        let targetSumMin = 180;
+        let targetSumMax = 360;
+        if (useAdvancedFilters) {
+            const minEl = document.getElementById('targetSumMin');
+            const maxEl = document.getElementById('targetSumMax');
+            targetSumMin = minEl ? parseInt(minEl.value) || 180 : 180;
+            targetSumMax = maxEl ? parseInt(maxEl.value) || 360 : 360;
+        }
+
         if (!reducedSystems[numCount] || !reducedSystems[numCount][guarantee]) {
             alert('Sistema non disponibile per questa configurazione!');
             return;
         }
 
+        // Analizza coppie se filtri avanzati attivi
+        let pairData = { topPairs: [], pairBonus: {} };
+        if (useAdvancedFilters) {
+            pairData = analyzePairs();
+        }
+
         // Genera pool di numeri dalla strategia scelta
         let poolNumbers = [];
+        const config = strategies[source] || strategies['balanced'];
+
         if (source === 'mixed') {
             // Mix intelligente: prendi dai migliori di ogni strategia
             const balanced = generateStrategyResults(analysisData.stats, 'balanced').sestina;
@@ -1710,15 +1840,21 @@
             poolNumbers = [...result.sestina];
 
             // Aggiungi altri numeri dalla stessa strategia fino a raggiungere numCount
+            // Usa scoring avanzato se filtri attivi
             const allRanked = Object.keys(analysisData.stats.main).slice(1)
                 .map(Number)
                 .sort((a, b) => {
-                    const config = strategies[source];
-                    const scoreA = (analysisData.stats.main[a].f * config.freqWeight) +
-                        (analysisData.stats.main[a].d * config.delayWeight);
-                    const scoreB = (analysisData.stats.main[b].f * config.freqWeight) +
-                        (analysisData.stats.main[b].d * config.delayWeight);
-                    return scoreB - scoreA;
+                    if (useAdvancedFilters) {
+                        const scoreA = calculateAdvancedScore(a, analysisData.stats.main[a], config, pairData.pairBonus);
+                        const scoreB = calculateAdvancedScore(b, analysisData.stats.main[b], config, pairData.pairBonus);
+                        return scoreB - scoreA;
+                    } else {
+                        const scoreA = (analysisData.stats.main[a].f * config.freqWeight) +
+                            (analysisData.stats.main[a].d * config.delayWeight);
+                        const scoreB = (analysisData.stats.main[b].f * config.freqWeight) +
+                            (analysisData.stats.main[b].d * config.delayWeight);
+                        return scoreB - scoreA;
+                    }
                 });
 
             for (let num of allRanked) {
@@ -1733,16 +1869,105 @@
 
         // Genera combinazioni dal sistema ridotto
         const systemTemplate = reducedSystems[numCount][guarantee];
-        const combinations = systemTemplate.map(template =>
+        let combinations = systemTemplate.map(template =>
             template.map(idx => poolNumbers[idx - 1])
         );
 
-        displayReducedSystem(poolNumbers, combinations, guarantee, numCount);
+        // Applica filtri qualita se attivi
+        let filteredCombinations = combinations;
+        let rejectedCount = 0;
+        if (useAdvancedFilters) {
+            filteredCombinations = combinations.filter(combo => {
+                const pass = filterCombinationQuality(combo, targetSumMin, targetSumMax);
+                if (!pass) rejectedCount++;
+                return pass;
+            });
+
+            // Se troppe combinazioni scartate, usa range piu ampio
+            if (filteredCombinations.length < combinations.length * 0.3) {
+                filteredCombinations = combinations.filter(combo =>
+                    filterCombinationQuality(combo, 150, 400)
+                );
+            }
+
+            // Fallback: se ancora troppo poche, usa tutte
+            if (filteredCombinations.length === 0) {
+                filteredCombinations = combinations;
+            }
+        }
+
+        // Seleziona SuperStar se richiesto
+        let superStars = [];
+        if (includeSuperStar) {
+            superStars = selectBestSuperStars(analysisData.stats);
+        }
+
+        displayReducedSystem(poolNumbers, filteredCombinations, guarantee, numCount, {
+            superStars: superStars,
+            pairData: pairData,
+            useAdvancedFilters: useAdvancedFilters,
+            rejectedCount: rejectedCount,
+            originalCount: combinations.length
+        });
     }
 
-    function displayReducedSystem(pool, combinations, guarantee, numCount) {
+    function displayReducedSystem(pool, combinations, guarantee, numCount, options = {}) {
         const costPerCombo = 1; // 1€ per combinazione
         const totalCost = combinations.length * costPerCombo;
+        const { superStars = [], pairData = {}, useAdvancedFilters = false, rejectedCount = 0, originalCount = 0 } = options;
+
+        // Sezione SuperStar consigliati
+        let superStarHtml = '';
+        if (superStars.length > 0) {
+            superStarHtml = `
+                <div style="background: linear-gradient(135deg, #581c87 0%, #7c3aed 100%); padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #a855f7;">
+                    <h4 style="color: #fff; margin-bottom: 15px; text-align: center;">
+                        ⭐ SUPERSTAR CONSIGLIATI
+                    </h4>
+                    <div class="balls" style="justify-content: center;">
+                        ${superStars.map(s => `<div class="ball" style="background: linear-gradient(135deg, #7c3aed, #a855f7); border: 2px solid #c084fc; font-weight: bold;">${s.num}</div>`).join('')}
+                    </div>
+                    <p style="color: #e9d5ff; text-align: center; margin-top: 10px; font-size: 0.85rem;">
+                        Selezionati per score ottimale (frequenza + ritardo - penalita ripetizione)
+                    </p>
+                </div>
+            `;
+        }
+
+        // Sezione Top 5 Coppie Frequenti
+        let pairsHtml = '';
+        if (pairData.topPairs && pairData.topPairs.length > 0) {
+            const top5Pairs = pairData.topPairs.slice(0, 5);
+            pairsHtml = `
+                <div style="background: #0f172a; padding: 20px; border-radius: 10px; margin: 20px 0; border: 1px solid #334155;">
+                    <h4 style="color: #38bdf8; margin-bottom: 15px; text-align: center;">
+                        🔗 TOP 5 COPPIE FREQUENTI
+                    </h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                        ${top5Pairs.map((p, i) => `
+                            <div style="background: #1e293b; padding: 10px 15px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: #fbbf24; font-weight: bold;">#${i+1}</span>
+                                <div class="ball" style="width: 32px; height: 32px; font-size: 0.85rem;">${p.pair[0]}</div>
+                                <span style="color: #64748b;">-</span>
+                                <div class="ball" style="width: 32px; height: 32px; font-size: 0.85rem;">${p.pair[1]}</div>
+                                <span style="color: #10b981; font-size: 0.8rem;">(${p.count}x)</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Info filtri applicati
+        let filtersInfoHtml = '';
+        if (useAdvancedFilters && rejectedCount > 0) {
+            filtersInfoHtml = `
+                <div style="background: #1e3a5f; padding: 10px 15px; border-radius: 8px; margin: 10px 0; text-align: center;">
+                    <span style="color: #38bdf8;">🔍 Filtri Qualita Applicati:</span>
+                    <span style="color: #94a3b8;"> ${rejectedCount} combinazioni scartate su ${originalCount} (somma/zone/pari-dispari)</span>
+                </div>
+            `;
+        }
 
         let html = `
             <div class="system-summary">
@@ -1756,6 +1981,8 @@
                     </p>
                 </div>
 
+                ${superStarHtml}
+
                 <div style="background: #0f172a; padding: 20px; border-radius: 10px; margin: 20px 0;">
                     <h4 style="color: #f8fafc; margin-bottom: 15px; text-align: center;">
                         🎯 I Tuoi ${numCount} Numeri
@@ -1764,6 +1991,9 @@
                         ${pool.map(n => `<div class="ball system">${n}</div>`).join('')}
                     </div>
                 </div>
+
+                ${pairsHtml}
+                ${filtersInfoHtml}
 
                 <div class="system-summary-grid">
                     <div class="system-stat">
@@ -1849,6 +2079,30 @@
         window.print();
     }
 
+    function toggleSumRange() {
+        const checkbox = document.getElementById('advancedFiltersCheck');
+        const container = document.getElementById('sumRangeContainer');
+        if (container) {
+            container.style.display = checkbox && checkbox.checked ? 'block' : 'none';
+        }
+    }
+
+    function toggleSuperSumRange() {
+        const checkbox = document.getElementById('superAdvancedFiltersCheck');
+        const container = document.getElementById('superSumRangeContainer');
+        if (container) {
+            container.style.display = checkbox && checkbox.checked ? 'block' : 'none';
+        }
+    }
+
+    function toggleMegaSumRange() {
+        const checkbox = document.getElementById('megaAdvancedFiltersCheck');
+        const container = document.getElementById('megaSumRangeContainer');
+        if (container) {
+            container.style.display = checkbox && checkbox.checked ? 'block' : 'none';
+        }
+    }
+
     function downloadSystem(combinations) {
         let text = `SISTEMA RIDOTTO SUPERENALOTTO\n`;
         text += '='.repeat(50) + '\n\n';
@@ -1904,6 +2158,22 @@
         const diversification = document.getElementById('megaDiversification').value;
         const TARGET_COMBINATIONS = 100;
 
+        // Leggi opzioni avanzate
+        const advancedFiltersEl = document.getElementById('megaAdvancedFiltersCheck');
+        const includeSuperStarEl = document.getElementById('megaIncludeSuperStarCheck');
+        const useAdvancedFilters = advancedFiltersEl && advancedFiltersEl.checked;
+        const includeSuperStar = includeSuperStarEl && includeSuperStarEl.checked;
+
+        // Range somma personalizzato
+        let targetSumMin = 180;
+        let targetSumMax = 360;
+        if (useAdvancedFilters) {
+            const minEl = document.getElementById('megaTargetSumMin');
+            const maxEl = document.getElementById('megaTargetSumMax');
+            targetSumMin = minEl ? parseInt(minEl.value) || 180 : 180;
+            targetSumMax = maxEl ? parseInt(maxEl.value) || 360 : 360;
+        }
+
         // Raccogli strategie selezionate
         const selectedStrategies = [];
         if (document.getElementById('megaIncludeCaldi').checked) selectedStrategies.push('hotNumbers');
@@ -1916,6 +2186,12 @@
         if (selectedStrategies.length < 2) {
             alert('Seleziona almeno 2 strategie per il Mega Sistema!');
             return;
+        }
+
+        // Analizza coppie se filtri avanzati attivi
+        let pairData = { topPairs: [], pairBonus: {} };
+        if (useAdvancedFilters) {
+            pairData = analyzePairs();
         }
 
         // Genera pool di numeri per ogni strategia (top 10 per strategia invece di 6)
@@ -1950,17 +2226,23 @@
                     })
                     .slice(0, 15);
             } else {
-                // Strategia standard
+                // Strategia standard - usa scoring avanzato se filtri attivi
                 ranked = Object.keys(analysisData.stats.main).slice(1)
                     .map(Number)
                     .sort((a, b) => {
-                        const scoreA = (analysisData.stats.main[a].f * config.freqWeight) +
-                                      (analysisData.stats.main[a].d * config.delayWeight) +
-                                      (analysisData.stats.main[a].recentF * config.recentWeight * 10);
-                        const scoreB = (analysisData.stats.main[b].f * config.freqWeight) +
-                                      (analysisData.stats.main[b].d * config.delayWeight) +
-                                      (analysisData.stats.main[b].recentF * config.recentWeight * 10);
-                        return scoreB - scoreA;
+                        if (useAdvancedFilters) {
+                            const scoreA = calculateAdvancedScore(a, analysisData.stats.main[a], config, pairData.pairBonus);
+                            const scoreB = calculateAdvancedScore(b, analysisData.stats.main[b], config, pairData.pairBonus);
+                            return scoreB - scoreA;
+                        } else {
+                            const scoreA = (analysisData.stats.main[a].f * config.freqWeight) +
+                                          (analysisData.stats.main[a].d * config.delayWeight) +
+                                          (analysisData.stats.main[a].recentF * config.recentWeight * 10);
+                            const scoreB = (analysisData.stats.main[b].f * config.freqWeight) +
+                                          (analysisData.stats.main[b].d * config.delayWeight) +
+                                          (analysisData.stats.main[b].recentF * config.recentWeight * 10);
+                            return scoreB - scoreA;
+                        }
                     })
                     .slice(0, 15);
             }
@@ -2002,10 +2284,45 @@
         const megaPool = rankedPool.slice(0, poolSize).map(n => n.number).sort((a, b) => a - b);
 
         // Genera 100 sestine con diversificazione
-        const combinations = generateMegaCombinations(megaPool, TARGET_COMBINATIONS, diversification, analysisData.stats);
+        let combinations = generateMegaCombinations(megaPool, TARGET_COMBINATIONS, diversification, analysisData.stats);
+
+        // Applica filtri qualita se attivi
+        let filteredCombinations = combinations;
+        let rejectedCount = 0;
+        if (useAdvancedFilters && combinations.length > 0) {
+            filteredCombinations = combinations.filter(combo => {
+                const pass = filterCombinationQuality(combo, targetSumMin, targetSumMax);
+                if (!pass) rejectedCount++;
+                return pass;
+            });
+
+            // Se troppe combinazioni scartate, usa range piu ampio
+            if (filteredCombinations.length < combinations.length * 0.5) {
+                filteredCombinations = combinations.filter(combo =>
+                    filterCombinationQuality(combo, 150, 400)
+                );
+            }
+
+            // Fallback: se ancora troppo poche, usa tutte
+            if (filteredCombinations.length < 50) {
+                filteredCombinations = combinations;
+            }
+        }
+
+        // Seleziona SuperStar se richiesto
+        let superStars = [];
+        if (includeSuperStar) {
+            superStars = selectBestSuperStars(analysisData.stats);
+        }
 
         // Visualizza risultati
-        displayMegaSystem(rankedPool.slice(0, poolSize), combinations, selectedStrategies, diversification);
+        displayMegaSystem(rankedPool.slice(0, poolSize), filteredCombinations, selectedStrategies, diversification, {
+            superStars: superStars,
+            pairData: pairData,
+            useAdvancedFilters: useAdvancedFilters,
+            rejectedCount: rejectedCount,
+            originalCount: combinations.length
+        });
     }
 
     function generateMegaCombinations(pool, targetCount, diversification, stats) {
@@ -2158,8 +2475,9 @@
         return combinations.slice(0, targetCount);
     }
 
-    function displayMegaSystem(poolData, combinations, selectedStrategies, diversification) {
+    function displayMegaSystem(poolData, combinations, selectedStrategies, diversification, options = {}) {
         const totalCost = combinations.length;
+        const { superStars = [], pairData = {}, useAdvancedFilters = false, rejectedCount = 0, originalCount = 0 } = options;
 
         // Statistiche sulle combinazioni generate
         const sums = combinations.map(c => c.reduce((a, b) => a + b, 0));
@@ -2171,11 +2489,66 @@
         const usedNumbers = new Set();
         combinations.forEach(c => c.forEach(n => usedNumbers.add(n)));
 
+        // Sezione SuperStar consigliati
+        let superStarHtml = '';
+        if (superStars.length > 0) {
+            superStarHtml = `
+                <div style="background: linear-gradient(135deg, #9a3412 0%, #ea580c 100%); padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #fb923c;">
+                    <h4 style="color: #fff; margin-bottom: 15px; text-align: center;">
+                        ⭐ SUPERSTAR CONSIGLIATI
+                    </h4>
+                    <div class="balls" style="justify-content: center;">
+                        ${superStars.map(s => `<div class="ball" style="background: linear-gradient(135deg, #ea580c, #f97316); border: 2px solid #fb923c; font-weight: bold;">${s.num}</div>`).join('')}
+                    </div>
+                    <p style="color: #fed7aa; text-align: center; margin-top: 10px; font-size: 0.85rem;">
+                        Selezionati per score ottimale (frequenza + ritardo - penalita ripetizione)
+                    </p>
+                </div>
+            `;
+        }
+
+        // Sezione Top 5 Coppie Frequenti
+        let pairsHtml = '';
+        if (pairData.topPairs && pairData.topPairs.length > 0) {
+            const top5Pairs = pairData.topPairs.slice(0, 5);
+            pairsHtml = `
+                <div style="background: #431407; padding: 20px; border-radius: 10px; margin: 20px 0; border: 1px solid #ea580c;">
+                    <h4 style="color: #fb923c; margin-bottom: 15px; text-align: center;">
+                        🔗 TOP 5 COPPIE FREQUENTI
+                    </h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                        ${top5Pairs.map((p, i) => `
+                            <div style="background: #7c2d12; padding: 10px 15px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: #fbbf24; font-weight: bold;">#${i+1}</span>
+                                <div class="ball" style="width: 32px; height: 32px; font-size: 0.85rem; background: #f97316;">${p.pair[0]}</div>
+                                <span style="color: #fdba74;">-</span>
+                                <div class="ball" style="width: 32px; height: 32px; font-size: 0.85rem; background: #f97316;">${p.pair[1]}</div>
+                                <span style="color: #10b981; font-size: 0.8rem;">(${p.count}x)</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Info filtri applicati
+        let filtersInfoHtml = '';
+        if (useAdvancedFilters && rejectedCount > 0) {
+            filtersInfoHtml = `
+                <div style="background: #7c2d12; padding: 10px 15px; border-radius: 8px; margin: 10px 0; text-align: center;">
+                    <span style="color: #fb923c;">🔍 Filtri Qualita Applicati:</span>
+                    <span style="color: #fed7aa;"> ${rejectedCount} combinazioni scartate su ${originalCount} (somma/zone/pari-dispari)</span>
+                </div>
+            `;
+        }
+
         let html = `
             <div class="mega-stat" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
                 <div class="mega-stat-value">${combinations.length}</div>
                 <div class="mega-stat-label">Sestine Generate</div>
             </div>
+
+            ${superStarHtml}
 
             <div class="super-system-card" style="border-color: #f97316;">
                 <h3 style="color: #f97316; margin-bottom: 20px; text-align: center;">
@@ -2194,6 +2567,9 @@
                     <tr><td><strong>Range Somme</strong></td><td>${minSum} - ${maxSum}</td></tr>
                 </table>
             </div>
+
+            ${pairsHtml}
+            ${filtersInfoHtml}
 
             <div class="strategy-pool" style="margin-top: 20px;">
                 <h4 style="color: #f97316; margin-bottom: 15px;">🎯 Pool Numeri Selezionati (Top ${poolData.length})</h4>
@@ -2316,6 +2692,22 @@
         const budget = parseInt(document.getElementById('superBudget').value);
         const mode = document.getElementById('superMode').value;
 
+        // Leggi opzioni avanzate
+        const advancedFiltersEl = document.getElementById('superAdvancedFiltersCheck');
+        const includeSuperStarEl = document.getElementById('superIncludeSuperStarCheck');
+        const useAdvancedFilters = advancedFiltersEl && advancedFiltersEl.checked;
+        const includeSuperStar = includeSuperStarEl && includeSuperStarEl.checked;
+
+        // Range somma personalizzato
+        let targetSumMin = 180;
+        let targetSumMax = 360;
+        if (useAdvancedFilters) {
+            const minEl = document.getElementById('superTargetSumMin');
+            const maxEl = document.getElementById('superTargetSumMax');
+            targetSumMin = minEl ? parseInt(minEl.value) || 180 : 180;
+            targetSumMax = maxEl ? parseInt(maxEl.value) || 360 : 360;
+        }
+
         // Raccogli strategie selezionate
         const selectedStrategies = [];
         if (document.getElementById('includeCaldi').checked) selectedStrategies.push('hotNumbers');
@@ -2328,6 +2720,12 @@
         if (selectedStrategies.length < 2) {
             alert('Seleziona almeno 2 strategie per il Super Sistema!');
             return;
+        }
+
+        // Analizza coppie se filtri avanzati attivi
+        let pairData = { topPairs: [], pairBonus: {} };
+        if (useAdvancedFilters) {
+            pairData = analyzePairs();
         }
 
         // Genera pool di numeri per ogni strategia
@@ -2430,7 +2828,42 @@
             poolDescription = `Tutte le sestine delle strategie selezionate (duplicati rimossi)`;
         }
 
-        displaySuperSystem(pools, finalCombinations, budget, mode, poolDescription, selectedStrategies);
+        // Applica filtri qualita se attivi
+        let filteredCombinations = finalCombinations;
+        let rejectedCount = 0;
+        if (useAdvancedFilters && finalCombinations.length > 0) {
+            filteredCombinations = finalCombinations.filter(combo => {
+                const pass = filterCombinationQuality(combo, targetSumMin, targetSumMax);
+                if (!pass) rejectedCount++;
+                return pass;
+            });
+
+            // Se troppe combinazioni scartate, usa range piu ampio
+            if (filteredCombinations.length < finalCombinations.length * 0.3) {
+                filteredCombinations = finalCombinations.filter(combo =>
+                    filterCombinationQuality(combo, 150, 400)
+                );
+            }
+
+            // Fallback: se ancora troppo poche, usa tutte
+            if (filteredCombinations.length === 0) {
+                filteredCombinations = finalCombinations;
+            }
+        }
+
+        // Seleziona SuperStar se richiesto
+        let superStars = [];
+        if (includeSuperStar) {
+            superStars = selectBestSuperStars(analysisData.stats);
+        }
+
+        displaySuperSystem(pools, filteredCombinations, budget, mode, poolDescription, selectedStrategies, {
+            superStars: superStars,
+            pairData: pairData,
+            useAdvancedFilters: useAdvancedFilters,
+            rejectedCount: rejectedCount,
+            originalCount: finalCombinations.length
+        });
     }
 
     function generateSmartCombinations(pool, maxCount) {
@@ -2479,15 +2912,71 @@
         return combinations.slice(0, maxCount);
     }
 
-    function displaySuperSystem(pools, combinations, budget, mode, description, strategies) {
+    function displaySuperSystem(pools, combinations, budget, mode, description, strategies, options = {}) {
         const actualCost = combinations.length;
         const savings = budget - actualCost;
+        const { superStars = [], pairData = {}, useAdvancedFilters = false, rejectedCount = 0, originalCount = 0 } = options;
+
+        // Sezione SuperStar consigliati
+        let superStarHtml = '';
+        if (superStars.length > 0) {
+            superStarHtml = `
+                <div style="background: linear-gradient(135deg, #581c87 0%, #7c3aed 100%); padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #c084fc;">
+                    <h4 style="color: #fff; margin-bottom: 15px; text-align: center;">
+                        ⭐ SUPERSTAR CONSIGLIATI
+                    </h4>
+                    <div class="balls" style="justify-content: center;">
+                        ${superStars.map(s => `<div class="ball" style="background: linear-gradient(135deg, #7c3aed, #a855f7); border: 2px solid #c084fc; font-weight: bold;">${s.num}</div>`).join('')}
+                    </div>
+                    <p style="color: #e9d5ff; text-align: center; margin-top: 10px; font-size: 0.85rem;">
+                        Selezionati per score ottimale (frequenza + ritardo - penalita ripetizione)
+                    </p>
+                </div>
+            `;
+        }
+
+        // Sezione Top 5 Coppie Frequenti
+        let pairsHtml = '';
+        if (pairData.topPairs && pairData.topPairs.length > 0) {
+            const top5Pairs = pairData.topPairs.slice(0, 5);
+            pairsHtml = `
+                <div style="background: #1e1b4b; padding: 20px; border-radius: 10px; margin: 20px 0; border: 1px solid #7c3aed;">
+                    <h4 style="color: #c084fc; margin-bottom: 15px; text-align: center;">
+                        🔗 TOP 5 COPPIE FREQUENTI
+                    </h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                        ${top5Pairs.map((p, i) => `
+                            <div style="background: #312e81; padding: 10px 15px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+                                <span style="color: #fbbf24; font-weight: bold;">#${i+1}</span>
+                                <div class="ball" style="width: 32px; height: 32px; font-size: 0.85rem; background: #a855f7;">${p.pair[0]}</div>
+                                <span style="color: #a5b4fc;">-</span>
+                                <div class="ball" style="width: 32px; height: 32px; font-size: 0.85rem; background: #a855f7;">${p.pair[1]}</div>
+                                <span style="color: #10b981; font-size: 0.8rem;">(${p.count}x)</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Info filtri applicati
+        let filtersInfoHtml = '';
+        if (useAdvancedFilters && rejectedCount > 0) {
+            filtersInfoHtml = `
+                <div style="background: #312e81; padding: 10px 15px; border-radius: 8px; margin: 10px 0; text-align: center;">
+                    <span style="color: #c084fc;">🔍 Filtri Qualita Applicati:</span>
+                    <span style="color: #e9d5ff;"> ${rejectedCount} combinazioni scartate su ${originalCount} (somma/zone/pari-dispari)</span>
+                </div>
+            `;
+        }
 
         let html = `
             <div class="mega-stat">
                 <div class="mega-stat-value">${combinations.length}</div>
                 <div class="mega-stat-label">Sestine Generate</div>
             </div>
+
+            ${superStarHtml}
 
             <div class="super-system-card">
                 <h3 style="color: #a855f7; margin-bottom: 20px; text-align: center;">
@@ -2525,6 +3014,9 @@
                     </tr>
                 </table>
             </div>
+
+            ${pairsHtml}
+            ${filtersInfoHtml}
 
             <div class="strategy-pool">
                 ${Object.entries(pools).map(([key, pool]) => `
@@ -2732,17 +3224,27 @@
             recentExtractions: recentLines.length
         };
 
+        // Memorizza estrazioni parsate per analisi coppie
+        rawExtractionsData = [];
+
         lines.forEach((line, idx) => {
             const numbers = (line.match(/\d+/g) || []).map(Number);
             const isRecent = idx < recentLines.length;
 
             if (numbers.length >= 6) {
-                numbers.slice(0, 6).forEach(n => {
-                    if (n >= 1 && n <= 90) {
-                        stats.main[n].f++;
-                        stats.main[n].d = Math.min(stats.main[n].d, totalLines - 1 - idx);
-                        if (isRecent) stats.main[n].recentF++;
-                    }
+                const mainNumbers = numbers.slice(0, 6).filter(n => n >= 1 && n <= 90);
+                const starNumber = numbers.length >= 7 ? numbers[numbers.length - 1] : null;
+
+                // Salva estrazione parsata
+                rawExtractionsData.push({
+                    numbers: mainNumbers,
+                    star: (starNumber >= 1 && starNumber <= 90) ? starNumber : null
+                });
+
+                mainNumbers.forEach(n => {
+                    stats.main[n].f++;
+                    stats.main[n].d = Math.min(stats.main[n].d, totalLines - 1 - idx);
+                    if (isRecent) stats.main[n].recentF++;
                 });
             }
 
@@ -2761,6 +3263,149 @@
             linesProcessed: totalLines,
             recentCount: recentLines.length
         };
+    }
+
+    // ===============================
+    // FUNZIONI ANALISI AVANZATA SISTEMA RIDOTTO
+    // ===============================
+
+    /**
+     * Analizza le coppie frequenti nelle estrazioni
+     * @returns {Object} {topPairs: Array<{pair: [a,b], count: n}>, pairBonus: {numero: bonus}}
+     */
+    function analyzePairs() {
+        if (!rawExtractionsData || rawExtractionsData.length === 0) {
+            return { topPairs: [], pairBonus: {} };
+        }
+
+        const pairCounts = {};
+
+        // Conta ogni coppia
+        rawExtractionsData.forEach(extraction => {
+            const nums = extraction.numbers;
+            for (let i = 0; i < nums.length; i++) {
+                for (let j = i + 1; j < nums.length; j++) {
+                    const key = `${Math.min(nums[i], nums[j])}-${Math.max(nums[i], nums[j])}`;
+                    pairCounts[key] = (pairCounts[key] || 0) + 1;
+                }
+            }
+        });
+
+        // Ordina per frequenza e prendi top 20
+        const topPairs = Object.entries(pairCounts)
+            .map(([key, count]) => ({
+                pair: key.split('-').map(Number),
+                count: count
+            }))
+            .sort((a, b) => b.count - a.count)
+            .slice(0, 20);
+
+        // Calcola pairBonus per ogni numero (somma frequenze delle sue coppie)
+        const pairBonus = {};
+        topPairs.forEach(({pair, count}) => {
+            pair.forEach(num => {
+                pairBonus[num] = (pairBonus[num] || 0) + count;
+            });
+        });
+
+        // Normalizza pairBonus (0-1)
+        const maxBonus = Math.max(...Object.values(pairBonus), 1);
+        Object.keys(pairBonus).forEach(num => {
+            pairBonus[num] = pairBonus[num] / maxBonus;
+        });
+
+        return { topPairs, pairBonus };
+    }
+
+    /**
+     * Calcola penalita anti-ripetizione basata sul ritardo
+     * @param {number} num - Numero da valutare
+     * @param {number} delay - Ritardo attuale del numero
+     * @returns {number} Penalita (0-0.3)
+     */
+    function getAntiRepetitionPenalty(num, delay) {
+        if (delay <= 2) return 0.30; // -30% se uscito nelle ultime 2 estrazioni
+        if (delay <= 4) return 0.15; // -15% se uscito nelle ultime 4 estrazioni
+        return 0;
+    }
+
+    /**
+     * Calcola score avanzato per un numero
+     * @param {number} num - Numero da valutare
+     * @param {Object} stats - Statistiche del numero (f, d, recentF)
+     * @param {Object} config - Configurazione strategia (freqWeight, delayWeight, recentWeight)
+     * @param {Object} pairBonus - Bonus coppie {numero: bonus}
+     * @returns {number} Score calcolato
+     */
+    function calculateAdvancedScore(num, stats, config, pairBonus) {
+        const baseScore = (stats.f * config.freqWeight) +
+                         (stats.d * config.delayWeight) +
+                         (stats.recentF * config.recentWeight * 10);
+
+        const bonus = (pairBonus[num] || 0) * 0.15 * stats.f; // 15% del contributo frequenza
+        const penalty = getAntiRepetitionPenalty(num, stats.d);
+
+        return (baseScore + bonus) * (1 - penalty);
+    }
+
+    /**
+     * Filtra combinazione per qualita
+     * @param {Array<number>} combo - Sestina da validare
+     * @param {number} minSum - Somma minima accettabile
+     * @param {number} maxSum - Somma massima accettabile
+     * @returns {boolean} true se la combinazione passa i filtri
+     */
+    function filterCombinationQuality(combo, minSum = 180, maxSum = 360) {
+        // Filtro somma
+        const sum = combo.reduce((a, b) => a + b, 0);
+        if (sum < minSum || sum > maxSum) return false;
+
+        // Filtro zone (1-18, 19-36, 37-54, 55-72, 73-90)
+        const zones = [0, 0, 0, 0, 0];
+        combo.forEach(n => {
+            if (n <= 18) zones[0]++;
+            else if (n <= 36) zones[1]++;
+            else if (n <= 54) zones[2]++;
+            else if (n <= 72) zones[3]++;
+            else zones[4]++;
+        });
+
+        // Almeno 3 zone coperte
+        const coveredZones = zones.filter(z => z > 0).length;
+        if (coveredZones < 3) return false;
+
+        // Max 3 numeri per zona
+        if (zones.some(z => z > 3)) return false;
+
+        // Filtro pari/dispari
+        const pari = combo.filter(n => n % 2 === 0).length;
+        const dispari = 6 - pari;
+
+        // Accetta 2-4, 3-3, 4-2
+        if (pari < 2 || pari > 4) return false;
+
+        return true;
+    }
+
+    /**
+     * Seleziona i migliori 3 SuperStar
+     * @param {Object} stats - Statistiche complete (stats.star)
+     * @returns {Array<{num: number, score: number}>} Top 3 SuperStar
+     */
+    function selectBestSuperStars(stats) {
+        const starStats = stats.star;
+
+        return Object.keys(starStats).slice(1)
+            .map(Number)
+            .filter(n => starStats[n].f > 0)
+            .map(n => {
+                // Score = frequenza + (ritardo * 0.5) - penalita anti-ripetizione
+                const penalty = getAntiRepetitionPenalty(n, starStats[n].d);
+                const score = starStats[n].f + (starStats[n].d * 0.5) * (1 - penalty);
+                return { num: n, score: score };
+            })
+            .sort((a, b) => b.score - a.score)
+            .slice(0, 3);
     }
 
     function generateStrategyResults(stats, strategy) {
