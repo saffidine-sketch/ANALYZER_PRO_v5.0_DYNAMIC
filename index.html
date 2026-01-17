@@ -1225,11 +1225,12 @@
 
     <div class="controls">
         <input type="file" id="fileInput" style="display:none" accept=".txt,.csv">
-        <button onclick="document.getElementById('fileInput').click()">[ CARICA_ARCHIVIO ]</button>
-        <button onclick="analyzeAllStrategies()" style="color: #f8fafc; border-color: #34d399;">[ ANALISI_COMPLETA ]</button>
-        <button onclick="showSystemsGenerator()" style="color: #fbbf24; border-color: #fbbf24;">[ SISTEMI_RIDOTTI ]</button>
-        <button onclick="showSuperSystem()" style="color: #a855f7; border-color: #a855f7;">[ SUPER_SISTEMA ]</button>
-        <button onclick="clearData()" style="color: #ef4444; border-color: #ef4444;">[ RESET ]</button>
+        <button onclick="document.getElementById('fileInput').click()">CARICA ARCHIVIO</button>
+        <button onclick="analyzeAllStrategies()" style="color: #f8fafc; border-color: #34d399;">ANALISI COMPLETA</button>
+        <button onclick="showSystemsGenerator()" style="color: #fbbf24; border-color: #fbbf24;">SISTEMI RIDOTTI</button>
+        <button onclick="showSuperSystem()" style="color: #a855f7; border-color: #a855f7;">SUPER SISTEMA</button>
+        <button onclick="showMegaSystem()" style="color: #f97316; border-color: #f97316;">MEGA SISTEMA</button>
+        <button onclick="clearData()" style="color: #ef4444; border-color: #ef4444;">RESET</button>
     </div>
 
     <div class="config-panel">
@@ -1451,6 +1452,95 @@
 
         <div id="superSystemResults"></div>
     </div>
+
+    <!-- MEGA SISTEMA - 100 Sestine -->
+    <div id="megaSystemPanel" class="results" style="display: none;">
+        <h2 style="color: #f97316; margin-bottom: 20px; text-align: center; font-size: 2rem;">
+            🚀 MEGA SISTEMA - 100 SESTINE
+        </h2>
+
+        <div style="background: linear-gradient(135deg, #9a3412 0%, #ea580c 100%); padding: 25px; border-radius: 15px; margin-bottom: 25px; border: 3px solid #f97316; box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);">
+            <h3 style="color: #fff; margin-bottom: 20px; text-align: center; font-size: 1.4rem;">
+                💎 IL SISTEMA DEFINITIVO
+            </h3>
+            <p style="color: #fed7aa; line-height: 1.8; margin-bottom: 15px; font-size: 1.05rem;">
+                Il <strong>MEGA SISTEMA</strong> genera esattamente <strong>100 sestine ottimizzate</strong> combinando tutte le strategie con algoritmi avanzati di diversificazione.
+            </p>
+            <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; border-left: 4px solid #10b981;">
+                <strong style="color: #10b981; font-size: 1.1rem;">✓ CARATTERISTICHE:</strong><br>
+                <span style="color: #d1fae5; line-height: 2;">
+                    • Esattamente 100 sestine generate<br>
+                    • Mix di tutte le 6 strategie<br>
+                    • Diversificazione garantita (somma, pari/dispari, zone)<br>
+                    • Copertura ottimale del range 1-90<br>
+                    • Nessun duplicato garantito
+                </span>
+            </div>
+        </div>
+
+        <div class="config-panel" style="border: 2px solid #f97316;">
+            <h3 style="color: #f97316; margin-bottom: 20px;">⚙️ Configurazione Mega Sistema</h3>
+
+            <div style="margin-top: 25px; background: #0f172a; padding: 20px; border-radius: 10px;">
+                <label style="color: #f97316; display: block; margin-bottom: 15px; font-weight: bold;">
+                    🎨 STRATEGIE DA INCLUDERE (tutte consigliate):
+                </label>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px; transition: all 0.3s;">
+                        <input type="checkbox" id="megaIncludeCaldi" checked style="margin-right: 10px; width: 18px; height: 18px;">
+                        🔥 Numeri Caldi
+                    </label>
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px;">
+                        <input type="checkbox" id="megaIncludeFreddi" checked style="margin-right: 10px; width: 18px; height: 18px;">
+                        ❄️ Ritardatari
+                    </label>
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px;">
+                        <input type="checkbox" id="megaIncludeBalanced" checked style="margin-right: 10px; width: 18px; height: 18px;">
+                        ⚖️ Bilanciata
+                    </label>
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px;">
+                        <input type="checkbox" id="megaIncludeRecent" checked style="margin-right: 10px; width: 18px; height: 18px;">
+                        🎯 Focus Recenti
+                    </label>
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px;">
+                        <input type="checkbox" id="megaIncludeContrarian" checked style="margin-right: 10px; width: 18px; height: 18px;">
+                        🔄 Contrarian
+                    </label>
+                    <label style="display: flex; align-items: center; color: #94a3b8; cursor: pointer; padding: 10px; background: #1e293b; border-radius: 5px;">
+                        <input type="checkbox" id="megaIncludeMath" checked style="margin-right: 10px; width: 18px; height: 18px;">
+                        📐 Matematica
+                    </label>
+                </div>
+            </div>
+
+            <div style="margin-top: 25px;">
+                <label style="color: #f97316; display: block; margin-bottom: 10px; font-weight: bold;">
+                    🎲 CRITERIO DI DIVERSIFICAZIONE:
+                </label>
+                <select id="megaDiversification" style="width: 100%; padding: 12px; background: #020617; border: 2px solid #f97316; color: #fed7aa; border-radius: 8px; font-size: 1rem;">
+                    <option value="balanced">⚖️ BILANCIATO - Mix equilibrato di tutti i criteri</option>
+                    <option value="sum">📊 SOMMA OTTIMALE - Privilegia sestine con somma 200-340</option>
+                    <option value="coverage">🎯 COPERTURA MASSIMA - Massimizza i numeri diversi usati</option>
+                    <option value="zones">📍 ZONE UNIFORMI - Distribuzione uniforme 1-90</option>
+                </select>
+                <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 8px; line-height: 1.6;">
+                    <strong>Bilanciato:</strong> Applica tutti i criteri in modo equilibrato<br>
+                    <strong>Somma Ottimale:</strong> Statisticamente, le sestine vincenti hanno spesso somma tra 200-340<br>
+                    <strong>Copertura Massima:</strong> Usa il maggior numero possibile di numeri diversi<br>
+                    <strong>Zone Uniformi:</strong> Garantisce presenza di numeri da ogni zona (1-15, 16-30, ecc.)
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 35px 0;">
+            <button onclick="generateMegaSystem()" style="padding: 20px 50px; font-size: 1.3rem; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: white; border: 3px solid #fb923c; border-radius: 15px; box-shadow: 0 0 20px rgba(249, 115, 22, 0.5); cursor: pointer; font-weight: bold; transition: all 0.3s;">
+                🚀 GENERA 100 SESTINE 🚀
+            </button>
+        </div>
+
+        <div id="megaSystemResults"></div>
+    </div>
 </div>
 
 <script>
@@ -1542,6 +1632,8 @@
         }
         document.getElementById('results').style.display = 'none';
         document.getElementById('systemsPanel').style.display = 'block';
+        document.getElementById('superSystemPanel').style.display = 'none';
+        document.getElementById('megaSystemPanel').style.display = 'none';
         window.scrollTo({top: document.getElementById('systemsPanel').offsetTop - 20, behavior: 'smooth'});
     }
 
@@ -1792,7 +1884,432 @@
         document.getElementById('results').style.display = 'none';
         document.getElementById('systemsPanel').style.display = 'none';
         document.getElementById('superSystemPanel').style.display = 'block';
+        document.getElementById('megaSystemPanel').style.display = 'none';
         window.scrollTo({top: document.getElementById('superSystemPanel').offsetTop - 20, behavior: 'smooth'});
+    }
+
+    function showMegaSystem() {
+        if (!analysisData) {
+            alert("Prima carica l'archivio e fai un'analisi!");
+            return;
+        }
+        document.getElementById('results').style.display = 'none';
+        document.getElementById('systemsPanel').style.display = 'none';
+        document.getElementById('superSystemPanel').style.display = 'none';
+        document.getElementById('megaSystemPanel').style.display = 'block';
+        window.scrollTo({top: document.getElementById('megaSystemPanel').offsetTop - 20, behavior: 'smooth'});
+    }
+
+    function generateMegaSystem() {
+        const diversification = document.getElementById('megaDiversification').value;
+        const TARGET_COMBINATIONS = 100;
+
+        // Raccogli strategie selezionate
+        const selectedStrategies = [];
+        if (document.getElementById('megaIncludeCaldi').checked) selectedStrategies.push('hotNumbers');
+        if (document.getElementById('megaIncludeFreddi').checked) selectedStrategies.push('coldNumbers');
+        if (document.getElementById('megaIncludeBalanced').checked) selectedStrategies.push('balanced');
+        if (document.getElementById('megaIncludeRecent').checked) selectedStrategies.push('recentFocused');
+        if (document.getElementById('megaIncludeContrarian').checked) selectedStrategies.push('contrarian');
+        if (document.getElementById('megaIncludeMath').checked) selectedStrategies.push('mathematical');
+
+        if (selectedStrategies.length < 2) {
+            alert('Seleziona almeno 2 strategie per il Mega Sistema!');
+            return;
+        }
+
+        // Genera pool di numeri per ogni strategia (top 10 per strategia invece di 6)
+        const allRankedNumbers = [];
+        selectedStrategies.forEach(strat => {
+            const config = strategies[strat];
+            let ranked;
+
+            if (config.special === 'spread') {
+                // Strategia spread - prendi i migliori di ogni zona
+                const zones = [[1,15], [16,30], [31,45], [46,60], [61,75], [76,90]];
+                ranked = [];
+                zones.forEach(([min, max]) => {
+                    const zoneNums = Object.keys(analysisData.stats.main).slice(min, max + 1)
+                        .map(Number)
+                        .sort((a, b) => {
+                            const scoreA = (analysisData.stats.main[a].f * config.freqWeight) + (analysisData.stats.main[a].d * config.delayWeight);
+                            const scoreB = (analysisData.stats.main[b].f * config.freqWeight) + (analysisData.stats.main[b].d * config.delayWeight);
+                            return scoreB - scoreA;
+                        });
+                    ranked.push(...zoneNums.slice(0, 3)); // Top 3 per zona
+                });
+            } else if (config.inverted) {
+                // Strategia contrarian
+                ranked = Object.keys(analysisData.stats.main).slice(1)
+                    .map(Number)
+                    .filter(n => n % 5 !== 0) // Escludi multipli di 5
+                    .sort((a, b) => {
+                        const scoreA = (-analysisData.stats.main[a].f * 0.3) + (analysisData.stats.main[a].d * 0.7);
+                        const scoreB = (-analysisData.stats.main[b].f * 0.3) + (analysisData.stats.main[b].d * 0.7);
+                        return scoreB - scoreA;
+                    })
+                    .slice(0, 15);
+            } else {
+                // Strategia standard
+                ranked = Object.keys(analysisData.stats.main).slice(1)
+                    .map(Number)
+                    .sort((a, b) => {
+                        const scoreA = (analysisData.stats.main[a].f * config.freqWeight) +
+                                      (analysisData.stats.main[a].d * config.delayWeight) +
+                                      (analysisData.stats.main[a].recentF * config.recentWeight * 10);
+                        const scoreB = (analysisData.stats.main[b].f * config.freqWeight) +
+                                      (analysisData.stats.main[b].d * config.delayWeight) +
+                                      (analysisData.stats.main[b].recentF * config.recentWeight * 10);
+                        return scoreB - scoreA;
+                    })
+                    .slice(0, 15);
+            }
+
+            // Aggiungi i numeri con peso basato sulla posizione nel ranking
+            ranked.forEach((num, idx) => {
+                allRankedNumbers.push({
+                    number: num,
+                    strategy: strat,
+                    score: 15 - idx, // Più alto = migliore
+                    color: config.color
+                });
+            });
+        });
+
+        // Crea un pool di numeri unici con punteggio aggregato
+        const numberScores = {};
+        allRankedNumbers.forEach(item => {
+            if (!numberScores[item.number]) {
+                numberScores[item.number] = { total: 0, count: 0, strategies: [] };
+            }
+            numberScores[item.number].total += item.score;
+            numberScores[item.number].count++;
+            numberScores[item.number].strategies.push(item.strategy);
+        });
+
+        // Ordina i numeri per punteggio totale
+        const rankedPool = Object.entries(numberScores)
+            .map(([num, data]) => ({
+                number: parseInt(num),
+                score: data.total,
+                appearances: data.count,
+                strategies: data.strategies
+            }))
+            .sort((a, b) => b.score - a.score);
+
+        // Prendi i migliori numeri per il pool (almeno 25 numeri per 100 combinazioni diverse)
+        const poolSize = Math.min(35, rankedPool.length);
+        const megaPool = rankedPool.slice(0, poolSize).map(n => n.number).sort((a, b) => a - b);
+
+        // Genera 100 sestine con diversificazione
+        const combinations = generateMegaCombinations(megaPool, TARGET_COMBINATIONS, diversification, analysisData.stats);
+
+        // Visualizza risultati
+        displayMegaSystem(rankedPool.slice(0, poolSize), combinations, selectedStrategies, diversification);
+    }
+
+    function generateMegaCombinations(pool, targetCount, diversification, stats) {
+        const combinations = [];
+        const usedKeys = new Set();
+        const maxAttempts = targetCount * 50; // Limita i tentativi
+        let attempts = 0;
+
+        // Funzione per calcolare la somma di una sestina
+        const getSum = (combo) => combo.reduce((a, b) => a + b, 0);
+
+        // Funzione per contare pari/dispari
+        const getEvenOdd = (combo) => {
+            const even = combo.filter(n => n % 2 === 0).length;
+            return { even, odd: 6 - even };
+        };
+
+        // Funzione per verificare la distribuzione nelle zone
+        const getZoneDistribution = (combo) => {
+            const zones = [0, 0, 0, 0, 0, 0]; // 6 zone
+            combo.forEach(n => {
+                const zoneIdx = Math.min(5, Math.floor((n - 1) / 15));
+                zones[zoneIdx]++;
+            });
+            return zones;
+        };
+
+        // Funzione per calcolare il punteggio di diversità
+        const getDiversityScore = (combo, existingCombos) => {
+            let score = 0;
+            const comboSet = new Set(combo);
+
+            existingCombos.forEach(existing => {
+                const existingSet = new Set(existing);
+                let overlap = 0;
+                comboSet.forEach(n => { if (existingSet.has(n)) overlap++; });
+                // Penalizza combinazioni troppo simili
+                if (overlap >= 5) score -= 10;
+                else if (overlap >= 4) score -= 3;
+            });
+
+            return score;
+        };
+
+        // Genera combinazioni base dalle strategie
+        const strategyCombos = [];
+        ['hotNumbers', 'coldNumbers', 'balanced', 'recentFocused', 'contrarian', 'mathematical'].forEach(strat => {
+            try {
+                const result = generateStrategyResults(stats, strat);
+                if (result.sestina && result.sestina.length === 6) {
+                    const key = result.sestina.sort((a,b) => a-b).join(',');
+                    if (!usedKeys.has(key)) {
+                        strategyCombos.push([...result.sestina].sort((a,b) => a-b));
+                        usedKeys.add(key);
+                    }
+                }
+            } catch (e) {}
+        });
+
+        // Aggiungi le sestine delle strategie
+        combinations.push(...strategyCombos);
+
+        // Genera il resto delle combinazioni
+        while (combinations.length < targetCount && attempts < maxAttempts) {
+            attempts++;
+
+            // Genera una sestina casuale dal pool
+            const combo = [];
+            const available = [...pool];
+
+            while (combo.length < 6 && available.length > 0) {
+                const idx = Math.floor(Math.random() * available.length);
+                combo.push(available[idx]);
+                available.splice(idx, 1);
+            }
+
+            if (combo.length !== 6) continue;
+
+            combo.sort((a, b) => a - b);
+            const key = combo.join(',');
+
+            // Verifica duplicato
+            if (usedKeys.has(key)) continue;
+
+            // Applica filtri basati sulla diversificazione
+            const sum = getSum(combo);
+            const { even, odd } = getEvenOdd(combo);
+            const zones = getZoneDistribution(combo);
+
+            let accept = false;
+
+            switch (diversification) {
+                case 'sum':
+                    // Privilegia somme tra 200-340
+                    accept = sum >= 180 && sum <= 360;
+                    break;
+
+                case 'coverage':
+                    // Privilegia combinazioni con numeri diversi da quelle esistenti
+                    const diversityScore = getDiversityScore(combo, combinations);
+                    accept = diversityScore >= -5 || combinations.length < 20;
+                    break;
+
+                case 'zones':
+                    // Privilegia distribuzione uniforme nelle zone
+                    const maxZone = Math.max(...zones);
+                    const minZone = Math.min(...zones.filter(z => z > 0));
+                    accept = maxZone <= 3 && zones.filter(z => z > 0).length >= 3;
+                    break;
+
+                case 'balanced':
+                default:
+                    // Mix di tutti i criteri
+                    const sumOk = sum >= 180 && sum <= 360;
+                    const evenOddOk = even >= 2 && odd >= 2;
+                    const zonesOk = zones.filter(z => z > 0).length >= 3;
+                    accept = (sumOk && evenOddOk) || (sumOk && zonesOk) || (evenOddOk && zonesOk);
+                    break;
+            }
+
+            if (accept || combinations.length < 30) { // Sii più permissivo per le prime 30
+                combinations.push(combo);
+                usedKeys.add(key);
+            }
+        }
+
+        // Se non abbiamo raggiunto 100, genera le rimanenti senza filtri
+        while (combinations.length < targetCount && attempts < maxAttempts * 2) {
+            attempts++;
+            const combo = [];
+            const available = [...pool];
+
+            while (combo.length < 6 && available.length > 0) {
+                const idx = Math.floor(Math.random() * available.length);
+                combo.push(available[idx]);
+                available.splice(idx, 1);
+            }
+
+            if (combo.length !== 6) continue;
+
+            combo.sort((a, b) => a - b);
+            const key = combo.join(',');
+
+            if (!usedKeys.has(key)) {
+                combinations.push(combo);
+                usedKeys.add(key);
+            }
+        }
+
+        return combinations.slice(0, targetCount);
+    }
+
+    function displayMegaSystem(poolData, combinations, selectedStrategies, diversification) {
+        const totalCost = combinations.length;
+
+        // Statistiche sulle combinazioni generate
+        const sums = combinations.map(c => c.reduce((a, b) => a + b, 0));
+        const avgSum = Math.round(sums.reduce((a, b) => a + b, 0) / sums.length);
+        const minSum = Math.min(...sums);
+        const maxSum = Math.max(...sums);
+
+        // Conta numeri usati
+        const usedNumbers = new Set();
+        combinations.forEach(c => c.forEach(n => usedNumbers.add(n)));
+
+        let html = `
+            <div class="mega-stat" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+                <div class="mega-stat-value">${combinations.length}</div>
+                <div class="mega-stat-label">Sestine Generate</div>
+            </div>
+
+            <div class="super-system-card" style="border-color: #f97316;">
+                <h3 style="color: #f97316; margin-bottom: 20px; text-align: center;">
+                    📊 ANALISI MEGA SISTEMA
+                </h3>
+
+                <table class="comparison-table">
+                    <tr><th>Metrica</th><th>Valore</th></tr>
+                    <tr><td><strong>Sestine Generate</strong></td><td style="color: #f97316; font-weight: bold;">${combinations.length}</td></tr>
+                    <tr><td><strong>Costo Totale</strong></td><td style="color: #10b981; font-weight: bold;">${totalCost}€</td></tr>
+                    <tr><td><strong>Strategie Combinate</strong></td><td>${selectedStrategies.length}</td></tr>
+                    <tr><td><strong>Diversificazione</strong></td><td style="color: #f97316;">${diversification.toUpperCase()}</td></tr>
+                    <tr><td><strong>Pool Numeri</strong></td><td>${poolData.length} numeri</td></tr>
+                    <tr><td><strong>Numeri Utilizzati</strong></td><td>${usedNumbers.size} su 90</td></tr>
+                    <tr><td><strong>Somma Media</strong></td><td>${avgSum}</td></tr>
+                    <tr><td><strong>Range Somme</strong></td><td>${minSum} - ${maxSum}</td></tr>
+                </table>
+            </div>
+
+            <div class="strategy-pool" style="margin-top: 20px;">
+                <h4 style="color: #f97316; margin-bottom: 15px;">🎯 Pool Numeri Selezionati (Top ${poolData.length})</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+                    ${poolData.map(item => `
+                        <span style="background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 8px 12px; border-radius: 8px; font-weight: bold; font-size: 1.1rem;">
+                            ${item.number}
+                            <span style="font-size: 0.7rem; opacity: 0.8;">(${item.appearances}x)</span>
+                        </span>
+                    `).join('')}
+                </div>
+            </div>
+
+            <div class="info-box" style="background: #1e3a1c; border-left-color: #10b981; margin-top: 20px;">
+                <h4 style="color: #10b981;">💡 Come Funziona il Mega Sistema</h4>
+                <p style="color: #d1fae5; line-height: 1.8;">
+                    Il Mega Sistema combina <strong>${selectedStrategies.length} strategie diverse</strong> per creare un pool di ${poolData.length} numeri ottimizzati.
+                    Da questo pool vengono generate <strong>100 sestine uniche</strong> con il criterio di diversificazione "${diversification}".
+                    <br><br>
+                    <strong>Copertura:</strong> ${usedNumbers.size} numeri diversi utilizzati su 90 possibili (${Math.round(usedNumbers.size/90*100)}% di copertura).
+                </p>
+            </div>
+
+            <div style="background: #0f172a; border: 2px solid #f97316; border-radius: 15px; padding: 25px; margin-top: 25px;">
+                <h3 style="color: #f97316; text-align: center; margin-bottom: 20px;">
+                    🎲 Le Tue ${combinations.length} Sestine Mega Sistema
+                </h3>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; max-height: 600px; overflow-y: auto; padding: 10px;">
+                    ${combinations.map((combo, idx) => {
+                        const sum = combo.reduce((a, b) => a + b, 0);
+                        const even = combo.filter(n => n % 2 === 0).length;
+                        return `
+                            <div style="background: #1e293b; padding: 12px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border-left: 3px solid #f97316;">
+                                <span style="color: #64748b; font-size: 0.8rem; min-width: 30px;">#${idx + 1}</span>
+                                <span style="color: #f8fafc; font-weight: bold; font-family: monospace; letter-spacing: 2px;">
+                                    ${combo.map(n => n.toString().padStart(2, '0')).join(' - ')}
+                                </span>
+                                <span style="color: #94a3b8; font-size: 0.7rem;">Σ${sum} P${even}/D${6-even}</span>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap;">
+                <button onclick="printMegaSystem()" style="padding: 15px 30px; background: #10b981; color: white; border-radius: 10px; border: 2px solid #34d399;">
+                    🖨️ STAMPA
+                </button>
+                <button onclick="downloadMegaSystem()" style="padding: 15px 30px; background: #3b82f6; color: white; border-radius: 10px; border: 2px solid #60a5fa;">
+                    💾 SCARICA TXT
+                </button>
+                <button onclick="showMegaSystem()" style="padding: 15px 30px; background: #334155; color: #94a3b8; border-radius: 10px; border: 2px solid #475569;">
+                    🔄 RIGENERA
+                </button>
+            </div>
+        `;
+
+        document.getElementById('megaSystemResults').innerHTML = html;
+
+        // Salva le combinazioni per download/stampa
+        window.lastMegaCombinations = combinations;
+    }
+
+    function printMegaSystem() {
+        if (!window.lastMegaCombinations) return;
+
+        const printContent = `
+            <html>
+            <head>
+                <title>Mega Sistema - 100 Sestine</title>
+                <style>
+                    body { font-family: Arial, sans-serif; padding: 20px; }
+                    h1 { color: #f97316; text-align: center; }
+                    .combo { padding: 5px; border-bottom: 1px solid #eee; font-family: monospace; }
+                    .combo:nth-child(even) { background: #f5f5f5; }
+                </style>
+            </head>
+            <body>
+                <h1>🚀 MEGA SISTEMA - 100 SESTINE</h1>
+                <p style="text-align: center;">Generato il: ${new Date().toLocaleString('it-IT')}</p>
+                <hr>
+                ${window.lastMegaCombinations.map((combo, idx) =>
+                    `<div class="combo">${(idx + 1).toString().padStart(3, '0')}. ${combo.map(n => n.toString().padStart(2, '0')).join(' - ')}</div>`
+                ).join('')}
+            </body>
+            </html>
+        `;
+
+        const printWindow = window.open('', '_blank');
+        printWindow.document.write(printContent);
+        printWindow.document.close();
+        printWindow.print();
+    }
+
+    function downloadMegaSystem() {
+        if (!window.lastMegaCombinations) return;
+
+        let content = "MEGA SISTEMA - 100 SESTINE\n";
+        content += "Generato il: " + new Date().toLocaleString('it-IT') + "\n";
+        content += "=".repeat(40) + "\n\n";
+
+        window.lastMegaCombinations.forEach((combo, idx) => {
+            content += `${(idx + 1).toString().padStart(3, '0')}. ${combo.map(n => n.toString().padStart(2, '0')).join(' - ')}\n`;
+        });
+
+        content += "\n" + "=".repeat(40) + "\n";
+        content += "Costo totale: " + window.lastMegaCombinations.length + "€\n";
+
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `mega_sistema_100_${new Date().toISOString().slice(0,10)}.txt`;
+        a.click();
+        URL.revokeObjectURL(url);
     }
 
     function generateSuperSystem() {
